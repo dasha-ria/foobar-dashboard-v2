@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
   </head>
-  <body class="bg-brand-background pt-6 pb-6 pl-6 pr-6">
+  <body class="bg-brand-background pt-6 pb-6 pl-6 pr-6 h-screen w-screen">
     <div
       class="
         grid grid-cols-1
@@ -13,45 +13,87 @@
         xl:grid-cols-2 xl:grid-rows-8
         grid-flow-row
         gap-6
+        h-full
+        w-full
       "
     >
-      <div class="grid col-span-1 row-span-3 order-1">
+      <div class="grid grid-rows-[auto,1fr] col-span-1 row-span-2 order-1">
         <h1 class="text-black text-xl font-medium mb-2">Queue</h1>
         <div class="flex space-x-6 items-center">
-          <div class="flex space-x-3">
-            <div class="bg-white w-40 h-48 shadow rounded-xl space-y-4 p-4">
+          <div class="flex h-full w-[75%] space-x-3">
+            <div
+              class="
+                bg-white
+                flex-1
+                h-full
+                shadow
+                rounded-xl
+                space-y-4
+                p-4
+                flex flex-col
+                justify-between
+              "
+            >
               <h3 class="text-black text-center text-lg">272</h3>
-              <div class="flex space-x-3 items-center">
-                <img src="images/beer-icon.svg" class="h-24 w-auto ml-2 mt-2" />
+              <div class="flex space-x-3 items-center justify-center">
+                <img src="images/beer-icon.svg" class="h-24 w-auto" />
                 <p class="text-4xl">x5</p>
               </div>
+              <!--I added a div below in order to make it easier to center the icon-->
+              <div></div>
             </div>
-            <div class="bg-white w-40 h-48 shadow rounded-xl space-y-4 p-4">
+            <div
+              class="
+                bg-white
+                flex-1
+                h-full
+                shadow
+                rounded-xl
+                space-y-4
+                p-4
+                flex flex-col
+                justify-between
+              "
+            >
               <h3 class="text-black text-center text-lg">272</h3>
-              <div class="flex space-x-3 items-center">
-                <img src="images/beer-icon.svg" class="h-24 w-auto ml-2 mt-2" />
+              <div class="flex space-x-3 items-center justify-center">
+                <img src="images/beer-icon.svg" class="h-24 w-auto" />
                 <p class="text-4xl">x10</p>
               </div>
+              <div></div>
             </div>
-            <div class="bg-white w-40 h-48 shadow rounded-xl space-y-4 p-4">
+            <div
+              class="
+                bg-white
+                flex-1
+                h-full
+                shadow
+                rounded-xl
+                space-y-4
+                p-4
+                flex flex-col
+                justify-between
+              "
+            >
               <h3 class="text-black text-center text-lg">272</h3>
-              <div class="flex space-x-3 items-center">
-                <img src="images/beer-icon.svg" class="h-24 w-auto ml-2 mt-2" />
+              <div class="flex space-x-3 items-center justify-center">
+                <img src="images/beer-icon.svg" class="h-24 w-auto" />
                 <p class="text-4xl">x1</p>
               </div>
+              <div></div>
             </div>
           </div>
           <p class="text-5xl text-gray-500">+10</p>
         </div>
       </div>
 
-      <div class="grid col-span-1 row-span-5 order-3">
+      <div class="grid grid-rows-[auto,1fr] col-span-1 row-span-6 order-3">
         <h1 class="text-black text-xl font-medium mb-2">Tap levels</h1>
         <div
           class="
             bg-white
             w-[100%]
-            h-[420px]
+            h-full
             shadow
             rounded-xl
             flex flex-col
@@ -256,7 +298,7 @@
               </div>
             </div>
           </div>
-          <div class="flex gap-8 justify-center">
+          <div class="flex justify-evenly">
             <div class="">
               <div class="">
                 <div
@@ -408,7 +450,7 @@
         </div>
       </div>
 
-      <div class="grid grid-rows-[auto,1fr] col-span-1 row-span-5 order-2">
+      <div class="grid grid-rows-[auto,1fr] col-span-1 row-span-4 order-2">
         <h1 class="text-black text-xl font-medium mb-2">In progress</h1>
         <div class="flex space-x-3">
           <div
@@ -435,7 +477,7 @@
               bg-white
               w-40
               h-[420px]
-              xl:w-[23%] xl:h-full
+              xl:flex-1 xl:h-full
               min-w-[120px]
               shadow
               rounded-xl
@@ -459,9 +501,9 @@
           <div
             class="
               bg-white
-              w-40
+              w-flex-1
               h-[420px]
-              xl:w-[23%] xl:h-full
+              xl:flex-1 xl:h-full
               shadow
               rounded-xl
             "
@@ -483,7 +525,7 @@
               bg-white
               w-40
               h-[420px]
-              xl:w-[23%] xl:h-full
+              xl:flex-1 xl:h-full
               min-w-[120px]
               shadow
               rounded-xl
@@ -508,11 +550,9 @@
         </div>
       </div>
 
-      <div class="grid col-span-1 row-span-3 order-4">
+      <div class="grid grid-rows-[auto,1fr] col-span-1 row-span-4 order-4">
         <h1 class="text-black text-xl font-medium">Storage</h1>
-        <div
-          class="bg-white shadow rounded-xl h-48 w-[675px] flex items-center"
-        >
+        <div class="bg-white shadow rounded-xl h-full w-full flex items-center">
           <div class="flex flex-row items-baseline justify-around w-full">
             <div class="flex flex-col items-center">
               <div class="bg-brand-red w-10 h-1"></div>
