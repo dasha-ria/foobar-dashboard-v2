@@ -17,14 +17,18 @@
         w-full
       "
     >
-      <div class="grid grid-rows-[auto,1fr] col-span-1 row-span-2 order-1">
+      <div
+        class="grid grid-rows-[auto,1fr] col-span-1 row-span-2 order-1 w-full"
+      >
         <h1 class="text-black text-xl font-medium mb-2">Queue</h1>
         <div class="flex space-x-6 items-center">
-          <div class="flex h-full w-[75%] space-x-3">
+          <div class="flex h-full w-full xl:w-[75%] space-x-3">
             <div
               class="
                 bg-white
                 flex-1
+                md:w-[25%] md:flex-none
+                xl:flex-1
                 h-full
                 shadow
                 rounded-xl
@@ -46,6 +50,8 @@
               class="
                 bg-white
                 flex-1
+                md:w-[25%] md:flex-none
+                xl:flex-1
                 h-full
                 shadow
                 rounded-xl
@@ -66,6 +72,8 @@
               class="
                 bg-white
                 flex-1
+                md:w-[25%] md:flex-none
+                xl:flex-1
                 h-full
                 shadow
                 rounded-xl
@@ -83,7 +91,7 @@
               <div></div>
             </div>
           </div>
-          <p class="text-5xl text-gray-500">+10</p>
+          <p class="hidden xl:block text-5xl text-gray-500">+10</p>
         </div>
       </div>
 
@@ -456,10 +464,12 @@
           <div
             class="
               bg-white
-              w-40
+              flex-1
               h-[420px]
-              xl:w-[23%] xl:h-full
+              xl:flex-1 xl:h-full
               min-w-[120px]
+              max-w-[200px]
+              md:max-w-none
               shadow
               rounded-xl
             "
@@ -475,10 +485,12 @@
           <div
             class="
               bg-white
-              w-40
+              flex-1
               h-[420px]
               xl:flex-1 xl:h-full
               min-w-[120px]
+              max-w-[200px]
+              md:max-w-none
               shadow
               rounded-xl
             "
@@ -501,10 +513,15 @@
           <div
             class="
               bg-white
-              w-40
+              hidden
+              md:block
+              flex-1
               h-[420px]
               xl:flex-1 xl:h-full
               shadow
+              min-w-[120px]
+              max-w-[200px]
+              md:max-w-none
               rounded-xl
             "
           >
@@ -523,11 +540,15 @@
           <div
             class="
               bg-white
-              w-40
+              hidden
+              flex-1
+              md:block
               h-[420px]
               xl:flex-1 xl:h-full
               min-w-[120px]
               shadow
+              max-w-[200px]
+              md:max-w-none
               rounded-xl
             "
           >
