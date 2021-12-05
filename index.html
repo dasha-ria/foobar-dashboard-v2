@@ -5,7 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard</title>
   </head>
-  <body class="bg-brand-background pt-6 pb-6 pl-6 pr-6 h-screen w-screen">
+  <body
+    class="
+      bg-brand-background
+      pt-6
+      pb-6
+      pl-6
+      pr-6
+      min-h-screen
+      md:h-screen
+      w-screen
+    "
+  >
     <div
       class="
         grid grid-cols-1
@@ -40,8 +51,8 @@
             >
               <h3 class="text-black text-center text-lg">272</h3>
               <div class="flex space-x-3 items-center justify-center">
-                <img src="images/beer-icon.svg" class="h-24 w-auto" />
-                <p class="text-4xl">x5</p>
+                <img src="images/beer-icon.svg" class="h-20 md:h-24 w-auto" />
+                <p class="text-3xl sm:text-4xl">x5</p>
               </div>
               <!--I added a div below in order to make it easier to center the icon-->
               <div></div>
@@ -63,8 +74,8 @@
             >
               <h3 class="text-black text-center text-lg">272</h3>
               <div class="flex space-x-3 items-center justify-center">
-                <img src="images/beer-icon.svg" class="h-24 w-auto" />
-                <p class="text-4xl">x10</p>
+                <img src="images/beer-icon.svg" class="h-20 md:h-24 w-auto" />
+                <p class="text-3xl sm:text-4xl">x10</p>
               </div>
               <div></div>
             </div>
@@ -85,8 +96,8 @@
             >
               <h3 class="text-black text-center text-lg">272</h3>
               <div class="flex space-x-3 items-center justify-center">
-                <img src="images/beer-icon.svg" class="h-24 w-auto" />
-                <p class="text-4xl">x1</p>
+                <img src="images/beer-icon.svg" class="h-20 md:h-24 w-auto" />
+                <p class="text-3xl sm:text-4xl">x1</p>
               </div>
               <div></div>
             </div>
@@ -125,7 +136,7 @@
                 >
                   <img
                     src="images/hoppily.png"
-                    class="w-16 h-16 transform rotate-90"
+                    class="md:w-16 h-16 transform rotate-90"
                   />
                   <svg class="absolute top-0 left-0">
                     <circle
@@ -572,8 +583,19 @@
       </div>
 
       <div class="grid grid-rows-[auto,1fr] col-span-1 row-span-4 order-4">
-        <h1 class="text-black text-xl font-medium mb-2">Storage</h1>
-        <div class="bg-white shadow rounded-xl h-full w-full flex items-center">
+        <h1 class="text-black text-xl font-medium">Storage</h1>
+        <div
+          class="
+            bg-white
+            shadow
+            rounded-xl
+            h-full
+            w-full
+            flex
+            items-center
+            min-h-[180px]
+          "
+        >
           <div class="flex flex-row items-baseline justify-around w-full">
             <div class="flex flex-col items-center">
               <div class="bg-brand-red w-10 h-1"></div>
