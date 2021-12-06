@@ -15,6 +15,9 @@ module.exports = {
           yellow: "#FFA800",
         },
       },
+      gridRow: {
+        "span-7": "span 7 / span 7",
+      },
     },
   },
   variants: {

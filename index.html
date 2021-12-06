@@ -15,6 +15,7 @@
       min-h-screen
       md:h-screen
       w-screen
+      overflow-x-hidden
     "
   >
     <!--Grid stuff below-->
@@ -22,7 +23,7 @@
       class="
         grid grid-cols-1
         auto-rows-auto
-        xl:grid-cols-2 xl:grid-rows-8
+        xl:grid-cols-2 xl:grid-rows-[repeat(10,minmax(0,1fr))]
         grid-flow-row
         gap-6
         h-full
@@ -30,17 +31,18 @@
       "
     >
       <div
-        class="grid grid-rows-[auto,1fr] col-span-1 row-span-2 order-1 w-full"
+        class="grid grid-rows-[auto,1fr] col-span-1 row-span-3 order-1 w-full"
       >
         <!--Queue starts here-->
         <h1 class="text-black text-xl font-medium mb-2">Queue</h1>
         <div class="flex space-x-6 items-center">
           <div class="flex h-full w-full xl:w-[75%] space-x-3">
-            <!--Queue "box starts here"-->
+            <!--Queue "box" starts here-->
             <div
               class="
                 bg-white
                 flex-1
+                min-w-[120px]
                 md:w-[25%] md:flex-none
                 xl:flex-1
                 h-full
@@ -60,11 +62,12 @@
               <!--I added a div below in order to make it easier to center the icon-->
               <div></div>
             </div>
-            <!--Queue "box starts here"-->
+            <!--Queue "box" starts here-->
             <div
               class="
                 bg-white
                 flex-1
+                min-w-[120px]
                 md:w-[25%] md:flex-none
                 xl:flex-1
                 h-full
@@ -83,11 +86,12 @@
               </div>
               <div></div>
             </div>
-            <!--Queue "box starts here"-->
+            <!--Queue "box" starts here-->
             <div
               class="
                 bg-white
                 flex-1
+                min-w-[120px]
                 md:w-[25%] md:flex-none
                 xl:flex-1
                 h-full
@@ -112,7 +116,7 @@
       </div>
 
       <!--Tap levels starts here-->
-      <div class="grid grid-rows-[auto,1fr] col-span-1 row-span-6 order-3">
+      <div class="grid grid-rows-[auto,1fr] col-span-1 row-span-7 order-3">
         <h1 class="text-black text-xl font-medium mb-2">Tap levels</h1>
         <div
           class="
@@ -123,10 +127,14 @@
             rounded-xl
             flex flex-col
             justify-center
+            xl:justify-evenly
+            pt-4
+            pb-4
+            xl:pt-0 xl:pb-0
           "
         >
           <!--Flex for first row-->
-          <div class="flex justify-around m-2 xl:m-0">
+          <div class="flex justify-around flex-wrap">
             <!--Individual tap level/circle-->
             <div class="">
               <div class="">
@@ -485,15 +493,15 @@
       </div>
 
       <!--In progress section starts here-->
-      <div class="grid grid-rows-[auto,1fr] col-span-1 row-span-4 order-2">
+      <div class="grid grid-rows-[auto,1fr] col-span-1 row-span-5 order-2">
         <h1 class="text-black text-xl font-medium mb-2">In progress</h1>
-        <div class="flex space-x-3">
+        <div class="flex gap-3 flex-wrap">
           <!--Individual bartender box-->
           <div
             class="
               bg-white
               flex-1
-              h-[420px]
+              h-[180px]
               xl:flex-1 xl:h-full
               min-w-[120px]
               max-w-[200px]
@@ -515,7 +523,7 @@
             class="
               bg-white
               flex-1
-              h-[420px]
+              h-[180px]
               xl:flex-1 xl:h-full
               min-w-[120px]
               max-w-[200px]
@@ -534,19 +542,19 @@
               <p class="text-sm text-brand-darkred">Pour beer</p>
             </div>
 
-            <p class="text-black text-lg text-center mt-4">270</p>
-            <p class="ml-3 mt-2 text-sm m-1">El Hefe</p>
-            <p class="ml-3 text-sm m-1">GitHop</p>
+            <p class="text-black text-lg text-center mt-4 hidden xl:block">
+              270
+            </p>
+            <p class="ml-3 mt-2 text-sm m-1 hidden xl:block">El Hefe</p>
+            <p class="ml-3 text-sm m-1 hidden xl:block">GitHop</p>
           </div>
 
           <!--Individual bartender box-->
           <div
             class="
               bg-white
-              hidden
-              md:block
               flex-1
-              h-[420px]
+              h-[180px]
               xl:flex-1 xl:h-full
               shadow
               min-w-[120px]
@@ -562,19 +570,19 @@
               <p class="text-sm text-brand-darkred">Reserve tap</p>
             </div>
 
-            <p class="text-black text-lg text-center mt-4">270</p>
-            <p class="ml-3 mt-2 text-sm m-1">El Hefe</p>
-            <p class="ml-3 text-sm m-1">GitHop</p>
+            <p class="text-black text-lg text-center mt-4 hidden xl:block">
+              270
+            </p>
+            <p class="ml-3 mt-2 text-sm m-1 hidden xl:block">El Hefe</p>
+            <p class="ml-3 text-sm m-1 hidden xl:block">GitHop</p>
           </div>
 
           <!--Individual bartender box-->
           <div
             class="
               bg-white
-              hidden
               flex-1
-              md:block
-              h-[420px]
+              h-[180px]
               xl:flex-1 xl:h-full
               min-w-[120px]
               shadow
@@ -590,21 +598,27 @@
               <p class="text-sm text-brand-darkred">Receive payment</p>
             </div>
 
-            <p class="text-black text-lg text-center mt-6">270</p>
-            <p class="ml-3 mt-2 text-sm m-1">x99 Ruined Childhood</p>
-            <p class="ml-3 text-sm m-1">x99 Hoppily Ever After</p>
-            <p class="ml-3 text-sm m-1">x99 Hollaback Lager</p>
-            <p class="ml-3 text-sm m-1">x99 Mowintime</p>
-            <p class="ml-3 text-sm m-1">x99 Fairy Tale Ale</p>
-            <p class="ml-3 text-sm m-1">x99 GitHop</p>
-            <p class="ml-3 text-sm m-1">x99 El Hefe</p>
+            <p class="text-black text-lg text-center mt-6 hidden xl:block">
+              270
+            </p>
+            <p class="ml-3 mt-2 text-sm m-1 hidden xl:block">
+              x99 Ruined Childhood
+            </p>
+            <p class="ml-3 text-sm m-1 hidden xl:block">
+              x99 Hoppily Ever After
+            </p>
+            <p class="ml-3 text-sm m-1 hidden xl:block">x99 Hollaback Lager</p>
+            <p class="ml-3 text-sm m-1 hidden xl:block">x99 Mowintime</p>
+            <p class="ml-3 text-sm m-1 hidden xl:block">x99 Fairy Tale Ale</p>
+            <p class="ml-3 text-sm m-1 hidden xl:block">x99 GitHop</p>
+            <p class="ml-3 text-sm m-1 hidden xl:block">x99 El Hefe</p>
           </div>
         </div>
       </div>
 
       <!--Storage starts here-->
-      <div class="grid grid-rows-[auto,1fr] col-span-1 row-span-4 order-4">
-        <h1 class="text-black text-xl font-medium">Storage</h1>
+      <div class="grid grid-rows-[auto,1fr] col-span-1 row-span-5 order-4">
+        <h1 class="text-black text-xl font-medium mb-2">Storage</h1>
         <div
           class="
             bg-white
@@ -614,49 +628,50 @@
             w-full
             flex
             items-center
-            min-h-[180px]
+            pt-6
+            pb-6
           "
         >
           <div class="flex flex-row items-baseline justify-around w-full">
             <!--Column-->
             <div class="flex flex-col items-center">
-              <div class="bg-brand-red w-10 h-1"></div>
+              <div class="bg-brand-red w-10 h-8"></div>
               <p class="mt-1 text-xs text-brand-darkred">Fairy Tale Ale</p>
               <p class="text-xs text-brand-darkred">3</p>
             </div>
             <!--Column-->
             <div class="flex flex-col items-center">
-              <div class="bg-brand-red w-10 h-2"></div>
+              <div class="bg-brand-red w-10 h-16"></div>
               <p class="mt-1 text-xs text-brand-darkred">Fairy Tale Ale</p>
               <p class="text-xs text-brand-darkred">3</p>
             </div>
             <!--Column-->
             <div class="flex flex-col items-center">
-              <div class="bg-brand-green w-10 h-12"></div>
+              <div class="bg-brand-green w-10 h-32"></div>
               <p class="mt-1 text-xs">Fairy Tale Ale</p>
               <p class="text-xs">3</p>
             </div>
             <!--Column-->
             <div class="hidden md:flex flex-col items-center">
-              <div class="bg-brand-green w-10 h-24"></div>
+              <div class="bg-brand-green w-10 h-36"></div>
               <p class="mt-1 text-xs">Fairy Tale Ale</p>
               <p class="text-xs">3</p>
             </div>
             <!--Column-->
             <div class="hidden md:flex flex-col items-center">
-              <div class="bg-brand-green w-10 h-28"></div>
+              <div class="bg-brand-green w-10 h-44"></div>
               <p class="mt-1 text-xs">Fairy Tale Ale</p>
               <p class="text-xs">3</p>
             </div>
             <!--Column-->
             <div class="hidden md:flex flex-col items-center">
-              <div class="bg-brand-green w-10 h-28"></div>
+              <div class="bg-brand-green w-10 h-52"></div>
               <p class="mt-1 text-xs">Fairy Tale Ale</p>
               <p class="text-xs">3</p>
             </div>
             <!--Column-->
             <div class="hidden md:flex flex-col items-center">
-              <div class="bg-brand-green w-10 h-28"></div>
+              <div class="bg-brand-green w-10 h-60"></div>
               <p class="mt-1 text-xs">Fairy Tale Ale</p>
               <p class="text-xs">3</p>
             </div>
