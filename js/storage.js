@@ -22,10 +22,19 @@ function sortStorage(a, b) {
   return 0;
 }
 
-function showColumn(column) {
-  console.log(column);
+function showColumn(column, index) {
+  console.log(column, index);
   const template = document.querySelector("#storage-template").content;
   const copy = template.cloneNode(true);
+
+  // if index > 2 (i.e. if this is element 4 or more)
+  // add a tailwind class that will hide it for mobile, but show it on larger screens
+
+  if (index > 2) {
+    const storageContainer = copy.querySelector(".storage-container");
+    storageContainer.classList.add("hidden");
+    storageContainer.classList.add("md:flex");
+  }
 
   const storageName = copy.querySelector(".storage-name");
   const storageAmount = copy.querySelector(".storage-amount");
