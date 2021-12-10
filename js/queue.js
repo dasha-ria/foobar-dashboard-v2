@@ -16,11 +16,11 @@ export function displayQueue(queueData) {
     let mql = window.matchMedia("(max-width: 768px)");
     if (mql.matches) {
       // if the viewport is 768 pixels wide or less, display all orders
-      displayOrders(sorted, ordersWrapper);
+      displayOrders(sorted, ordersWrapper, false);
     } else {
       // if the viewport is more than than 768 pixels wide, display only three earliest orders
       const queueToDisplay = sorted.slice(0, 3);
-      displayOrders(queueToDisplay, ordersWrapper);
+      displayOrders(queueToDisplay, ordersWrapper, true);
       // display  how many orders there are that are not shown
       const hiddenOrders = sorted.length - queueToDisplay.length;
       if (hiddenOrders > 0) {
@@ -35,11 +35,15 @@ export function displayQueue(queueData) {
   }
 }
 
-function displayOrders(orders, container) {
-  orders.forEach((item) => {
+function displayOrders(orders, container, flag) {
+  orders.forEach((item, index) => {
     const order = new Order(item.id, item.order);
-    const orderNode = order.createNode();
-    container.append(orderNode);
+    order.createNode(container);
+    if (flag) {
+      // console.log(order.node.getBoundingClientRect());
+      order.animateNodeIn(index);
+      // setTimeout(order.animateNodeOut, 5000 - (500 + index * 200) * 2);
+    }
   });
 }
 
