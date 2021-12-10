@@ -1,6 +1,6 @@
 "use strict";
 
-import { Order } from "./order.js";
+import { Order, DesktopOrder } from "./order.js";
 
 export function displayQueue(queueData) {
   // console.log("queue data");
@@ -37,12 +37,15 @@ export function displayQueue(queueData) {
 
 function displayOrders(orders, container, flag) {
   orders.forEach((item, index) => {
-    const order = new Order(item.id, item.order, container);
-    order.createNode();
     if (flag) {
-      // console.log(order.node.getBoundingClientRect());
+      const order = new DesktopOrder(item.id, item.order, container);
+      order.createNode();
       order.animateNodeIn(index);
-      // setTimeout(order.animateNodeOut, 5000 - (500 + index * 200) * 2);
+      console.log("create new DesktopOrder");
+    } else {
+      const order = new Order(item.id, item.order, container);
+      order.createNode();
+      console.log("create new Order");
     }
   });
 }

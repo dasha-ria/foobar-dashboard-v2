@@ -5,6 +5,33 @@ export class Order {
     this.container = container;
   }
 
+  createNode() {
+    const orderNode = document.createElement("article");
+    orderNode.className = `bg-white flex-1 min-w-[120px] md:w-[25%] md:flex-none xl:flex-1 h-full shadow rounded-xl space-y-2 p-2 flex flex-col justify-between order`;
+    orderNode.setAttribute(
+      "style",
+      "transform: translateX(500px); z-index: -5; opacity: 0;"
+    );
+
+    const markup = `<h3 class="text-black text-center text-lg">${this.id}</h3>
+                    <div class="flex space-x-3 items-center justify-center beers">
+                        <img src="images/beer-icon.svg" class="h-20 md:h-24 w-auto" />
+                        <p class="text-3xl sm:text-4xl">x${this.beers.length}</p>
+                    </div>
+                    <div></div>`;
+
+    orderNode.insertAdjacentHTML("afterbegin", markup);
+    this.container.append(orderNode);
+    this.node = orderNode;
+    return orderNode;
+  }
+}
+
+export class DesktopOrder extends Order {
+  constructor(id, beers, container) {
+    super(id, beers, container), (this.index = 0);
+  }
+
   set indexValue(value) {
     this.index = value;
     this.indexListener();
@@ -28,27 +55,6 @@ export class Order {
     }, 5000 - (600 - this.index * 100) * 2);
   }
 
-  createNode() {
-    const orderNode = document.createElement("article");
-    orderNode.className = `bg-white flex-1 min-w-[120px] md:w-[25%] md:flex-none xl:flex-1 h-full shadow rounded-xl space-y-2 p-2 flex flex-col justify-between order`;
-    orderNode.setAttribute(
-      "style",
-      "transform: translateX(500px); z-index: -5; opacity: 0;"
-    );
-
-    const markup = `<h3 class="text-black text-center text-lg">${this.id}</h3>
-                    <div class="flex space-x-3 items-center justify-center beers">
-                        <img src="images/beer-icon.svg" class="h-20 md:h-24 w-auto" />
-                        <p class="text-3xl sm:text-4xl">x${this.beers.length}</p>
-                    </div>
-                    <div></div>`;
-
-    orderNode.insertAdjacentHTML("afterbegin", markup);
-    this.container.append(orderNode);
-    this.node = orderNode;
-    return orderNode;
-  }
-
   animateNodeIn(index) {
     this.indexValue = index;
     const firstPosition = document
@@ -56,7 +62,7 @@ export class Order {
       .getBoundingClientRect();
     this.container.append(this.node);
     const actualPosition = this.node.getBoundingClientRect();
-    const deltaX = (firstPosition.left + 50 - actualPosition.left).toFixed(0);
+    // const deltaX = (firstPosition.left + 50 - actualPosition.left).toFixed(0);
 
     this.node.animate(
       [
