@@ -8,10 +8,6 @@ export class Order {
   createNode() {
     const orderNode = document.createElement("article");
     orderNode.className = `bg-white flex-1 min-w-[120px] md:w-[25%] md:flex-none xl:flex-1 h-full shadow rounded-xl space-y-2 p-2 flex flex-col justify-between order`;
-    orderNode.setAttribute(
-      "style",
-      "transform: translateX(500px); z-index: -5; opacity: 0;"
-    );
 
     const markup = `<h3 class="text-black text-center text-lg">${this.id}</h3>
                     <div class="flex space-x-3 items-center justify-center beers">
@@ -56,14 +52,11 @@ export class DesktopOrder extends Order {
   }
 
   animateNodeIn(index) {
+    this.node.setAttribute(
+      "style",
+      "transform: translateX(500px); z-index: -5; opacity: 0;"
+    );
     this.indexValue = index;
-    const firstPosition = document
-      .querySelector("p.plus_num")
-      .getBoundingClientRect();
-    this.container.append(this.node);
-    const actualPosition = this.node.getBoundingClientRect();
-    // const deltaX = (firstPosition.left + 50 - actualPosition.left).toFixed(0);
-
     this.node.animate(
       [
         { transform: `translateX(500px)`, opacity: 0 },

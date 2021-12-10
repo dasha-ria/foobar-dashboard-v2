@@ -88,8 +88,8 @@ const queueData = [
 ];
 
 function renderUI(data) {
-  //displayQueue(data.queue);
-  displayQueue(queueData);
+  displayQueue(data.queue);
+  //displayQueue(queueData);
   displayTaps(data.taps);
   displayBartenders(data.bartenders, data.serving);
   displayStorage(data.storage);
