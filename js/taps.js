@@ -19,9 +19,10 @@ function changeTapLevel(tap) {
 
   // calculate "from" and "to" states for keyframes
   const percentage = calculatePercentage(tap.level);
-  const dashArray = (60 * 2 * 3.14).toFixed(0);
+  const dashArray = (50 * 2 * 3.14).toFixed(0);
   const initState = stroke.getAttribute("stroke-dashoffset");
   const finalState = (dashArray - (percentage / 100) * dashArray).toFixed(0);
+  console.log(tap.beer, "FinalState", finalState);
 
   // if tap level is below 700, give the stroke red color and call animate function
   if (tap.level < 700) {
@@ -106,7 +107,7 @@ function renderTap(tap, index) {
                           <circle
                             class="text-brand-green line_level"
                             stroke-width="12"
-                            stroke-dasharray="377"
+                            stroke-dasharray="314"
                             stroke-dashoffset="151"
                             stroke-linecap="round"
                             stroke="currentColor"
