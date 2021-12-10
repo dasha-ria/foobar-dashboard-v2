@@ -7,7 +7,7 @@ export class Order {
 
   createNode() {
     const orderNode = document.createElement("article");
-    orderNode.className = `bg-white flex-1 min-w-[120px] md:w-[25%] md:flex-none xl:flex-1 h-full shadow rounded-xl space-y-2 p-2 flex flex-col justify-between order`;
+    orderNode.className = `bg-white flex-1 min-w-[120px] md:w-[25%] md:flex-none xl:flex-1 h-full shadow rounded-xl space-y-2 p-2 flex flex-col justify-between max-w-[200px] order`;
 
     const markup = `<h3 class="text-black text-center text-lg">${this.id}</h3>
                     <div class="flex space-x-3 items-center justify-center beers">

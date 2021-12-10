@@ -3,8 +3,8 @@
 import { Order, DesktopOrder } from "./order.js";
 
 export function displayQueue(queueData) {
-  console.log("queue data");
-  console.log(queueData);
+  // console.log("queue data");
+  // console.log(queueData);
 
   // sort orders from earliest to latest and clear container element
   const sorted = queueData.sort((a, b) => a.startTime - b.startTime);
@@ -62,6 +62,6 @@ function hideNumberOfHiddenOrders() {
 function displayNoQueueMessage(container) {
   const noQueueElement = document.createElement("p");
   noQueueElement.textContent = "No orders in the queue";
-  noQueueElement.className = "flex flex-col justify-center ";
+  noQueueElement.className = "flex flex-col justify-center mt-2 xl:mt-0";
   container.append(noQueueElement);
 }
