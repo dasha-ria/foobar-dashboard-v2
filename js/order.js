@@ -1,7 +1,8 @@
 export class Order {
-  constructor(id, beers) {
+  constructor(id, beers, container) {
     this.id = id;
     this.beers = beers;
+    this.container = container;
   }
 
   set indexValue(value) {
@@ -11,21 +12,29 @@ export class Order {
 
   indexListener() {
     setTimeout(() => {
-      console.log(this);
-      // this.node.style.display = "none";
-      this.node.animate([{ opacity: 1 }, { opacity: 0 }], {
-        iterations: 1,
-        duration: 200,
-        delay: this.index * 200,
-        fill: "forwards",
-      });
-      this.node.style.visibility = "hidden";
-    }, 5000 - (500 + this.index * 200) * 2);
+      this.node.animate(
+        [
+          { transform: "none", opacity: 1 },
+          { transform: `translateX(-700px)`, opacity: 0 },
+        ],
+        {
+          iterations: 1,
+          duration: 500,
+          delay: this.index * 100,
+          easing: "cubic-bezier(.73,-0.34,.44,1.15)",
+          fill: "forwards",
+        }
+      );
+    }, 5000 - (600 - this.index * 100) * 2);
   }
 
-  createNode(container) {
+  createNode() {
     const orderNode = document.createElement("article");
     orderNode.className = `bg-white flex-1 min-w-[120px] md:w-[25%] md:flex-none xl:flex-1 h-full shadow rounded-xl space-y-2 p-2 flex flex-col justify-between order`;
+    orderNode.setAttribute(
+      "style",
+      "transform: translateX(500px); z-index: -5; opacity: 0;"
+    );
 
     const markup = `<h3 class="text-black text-center text-lg">${this.id}</h3>
                     <div class="flex space-x-3 items-center justify-center beers">
@@ -35,8 +44,7 @@ export class Order {
                     <div></div>`;
 
     orderNode.insertAdjacentHTML("afterbegin", markup);
-    orderNode.style.visibility = "hidden";
-    container.append(orderNode);
+    this.container.append(orderNode);
     this.node = orderNode;
     return orderNode;
   }
@@ -46,42 +54,23 @@ export class Order {
     const firstPosition = document
       .querySelector("p.plus_num")
       .getBoundingClientRect();
+    this.container.append(this.node);
     const actualPosition = this.node.getBoundingClientRect();
-    const deltaX = (firstPosition.left - actualPosition.left).toFixed(0);
+    const deltaX = (firstPosition.left + 50 - actualPosition.left).toFixed(0);
 
     this.node.animate(
-      [{ transform: `translateX(${deltaX}px)` }, { transform: "none" }],
+      [
+        { transform: `translateX(500px)`, opacity: 0 },
+        { transform: "none", opacity: 1 },
+      ],
+
       {
         iterations: 1,
         duration: 500,
         delay: this.index * 200,
         easing: "cubic-bezier(.52,-0.13,.6,1.36)",
+        fill: "forwards",
       }
     );
-
-    this.node.style.visibility = "visible";
   }
 }
-
-// @keyframes animate-feature_kf {
-//   0% {
-//     transform: translate(var(--deltaX), var(--deltaY));
-//     transform-origin: 0 0;
-//     -webkit-transform-origin: 0 0;
-//   }
-//   100% {
-//     transform: none;
-//     transform-origin: 0 0;
-//     -webkit-transform-origin: 0 0;
-//   }
-// }
-
-// setTimeout(() => {
-//   this.node.animate([{ opacity: 1 }, { opacity: 0 }], {
-//     iterations: 1,
-//     duration: 500,
-//     delay: index * 200,
-//     easing: "cubic-bezier(.52,-0.13,.6,1.36)",
-//   });
-//   this.node.style.opacity = 0;
-// }, 5000 - (500 + index * 200) * 2);

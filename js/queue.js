@@ -3,8 +3,8 @@
 import { Order } from "./order.js";
 
 export function displayQueue(queueData) {
-  console.log("queue data");
-  console.log(queueData);
+  // console.log("queue data");
+  // console.log(queueData);
 
   // sort orders from earliest to latest and clear container element
   const sorted = queueData.sort((a, b) => a.startTime - b.startTime);
@@ -37,8 +37,8 @@ export function displayQueue(queueData) {
 
 function displayOrders(orders, container, flag) {
   orders.forEach((item, index) => {
-    const order = new Order(item.id, item.order);
-    order.createNode(container);
+    const order = new Order(item.id, item.order, container);
+    order.createNode();
     if (flag) {
       // console.log(order.node.getBoundingClientRect());
       order.animateNodeIn(index);
