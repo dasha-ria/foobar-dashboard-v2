@@ -1,6 +1,17 @@
 "use strict";
 
 import { Order } from "./order.js";
+import Swiper from "swiper";
+import "swiper/css";
+
+const swiper = new Swiper(".mySwiper", {
+  slidesPerView: 3,
+  spaceBetween: 30,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+});
 
 export function displayQueue(queueData) {
   console.log("queue data");
