@@ -3,6 +3,7 @@
 let hasRun = false;
 
 export function displayTaps(tapsData) {
+  //console.log(tapsData);
   // if the loop is running the first time, populate the taps section
   if (!hasRun) {
     renderTaps(tapsData);
@@ -14,47 +15,51 @@ export function displayTaps(tapsData) {
 function changeTapLevel(tap) {
   // get the stroke to change (animate)
   const stroke = document.querySelector(
-    `#taps article[data-beer="${tap.beer}"] circle.line_level`
+    `#taps article[data-id="${tap.id}"] circle.line_level`
   );
 
   // calculate "from" and "to" states for keyframes
-  const percentage = calculatePercentage(tap.level);
-  const dashArray = (50 * 2 * 3.14).toFixed(0);
-  const initState = stroke.getAttribute("stroke-dashoffset");
-  const finalState = (dashArray - (percentage / 100) * dashArray).toFixed(0);
+  const state = calculateStrokeStates(stroke, tap.level);
 
   // if tap level is below 700, give the stroke red color and call animate function
   if (tap.level < 700) {
-    const keyframes = [
-      { strokeDashoffset: initState },
-      { strokeDashoffset: finalState },
-      { color: "#FF8860" },
-    ];
-    animateStroke(stroke, keyframes);
-    stroke.style.color = "#FF8860";
+    const strokeColor = "#FF8860";
+    animateStroke(stroke, state.initial, state.final, strokeColor);
+    stroke.style.color = strokeColor;
   } else {
     // if the tap level is above 700, give the stroke green color and call animate function
-    const keyframes = [
-      { strokeDashoffset: initState },
-      { strokeDashoffset: finalState },
-      { color: "#87C13C" },
-    ];
-    animateStroke(stroke, keyframes);
-    stroke.style.color = "#87C13C";
+    const strokeColor = "#87C13C";
+    animateStroke(stroke, state.initial, state.final, strokeColor);
+    stroke.style.color = strokeColor;
   }
 
   // change textContent in the tap level paragraph
-  stroke.setAttribute("stroke-dashoffset", finalState);
+  stroke.setAttribute("stroke-dashoffset", state.final);
   document.querySelector(
-    `#taps article[data-beer="${tap.beer}"] p.level`
+    `#taps article[data-id="${tap.id}"] p.level`
   ).textContent = tap.level;
+}
+
+function calculateStrokeStates(stroke, tapLevel) {
+  const percentage = calculatePercentage(tapLevel);
+  const dashArray = (50 * 2 * 3.14).toFixed(0);
+
+  return {
+    initial: stroke.getAttribute("stroke-dashoffset"),
+    final: (dashArray - (percentage / 100) * dashArray).toFixed(0),
+  };
 }
 
 function calculatePercentage(level) {
   return ((level / 2500) * 100).toFixed(0);
 }
 
-function animateStroke(element, keyframes) {
+function animateStroke(element, initState, finalState, strokeColor) {
+  const keyframes = [
+    { strokeDashoffset: initState },
+    { strokeDashoffset: finalState },
+    { color: strokeColor },
+  ];
   element.animate(keyframes, {
     duration: 500,
     iterations: 1,
@@ -75,7 +80,9 @@ function renderTap(tap, index) {
     container = document.querySelector("#tap_row_two");
   }
 
-  const markup = `<article class="pr-4 md:pr-0" data-beer="${tap.beer}">
+  const markup = `<article class="pr-4 md:pr-0" data-beer="${
+    tap.beer
+  }" data-id="${tap.id}">
                     <div class="">
                       <div
                         class="
