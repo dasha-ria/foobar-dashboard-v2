@@ -17,6 +17,13 @@ export function displayBartenders(bartenders, serving) {
 
     clone.querySelector(".bartender-status img").src = `images/${bartender.statusDetail}.svg`;
 
+    // Setting color for bartender's status
+    if (bartender.statusDetail === "waiting") {
+      clone.querySelector(".bartender-status p").className = "text-sm text-brand-darkgreen";
+    } else {
+      clone.querySelector(".bartender-status p").className = "text-sm text-brand-darkred";
+    }
+
     clone.querySelector(".bartender-status p").textContent = bartender.statusDetail;
 
     const orderId = bartender.servingCustomer;
