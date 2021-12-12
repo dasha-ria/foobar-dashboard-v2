@@ -9,7 +9,8 @@ import { displayStorage } from "./storage.js";
 window.addEventListener("DOMContentLoaded", start);
 
 function start() {
-  loop();
+  //  loop();
+  fetchData();
 }
 
 async function loop() {

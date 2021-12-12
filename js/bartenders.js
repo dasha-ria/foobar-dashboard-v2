@@ -22,6 +22,23 @@ export function displayBartenders(bartenders, serving) {
     const orderId = bartender.servingCustomer;
     clone.querySelector(".bartender-order-id").textContent = orderId;
 
+    // Displaying beers from the order each bartender is working on
+    serving.forEach((serve) => {
+      if (serve.id === orderId) {
+        let array = [];
+        let counts = [];
+        console.log("counts", counts);
+        countBeers();
+
+        // Counting how many beers of each type bartender has in the order
+        function countBeers() {
+          serve.order.forEach((beer) => {
+            counts[beer] = (counts[beer] || 0) + 1;
+          });
+        }
+      }
+    });
+
     document.querySelector("#bartender-parent").appendChild(clone);
   });
 }
