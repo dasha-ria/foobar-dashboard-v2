@@ -9,8 +9,7 @@ import { displayStorage } from "./storage.js";
 window.addEventListener("DOMContentLoaded", start);
 
 function start() {
-  //  loop();
-  fetchData();
+  loop();
 }
 
 async function loop() {
@@ -19,7 +18,7 @@ async function loop() {
 }
 
 async function fetchData() {
-  // console.log("fetchData");
+  console.log("fetchData");
   try {
     loadJSON();
   } catch (err) {

@@ -6,6 +6,8 @@ export function displayBartenders(bartenders, serving) {
   console.log("serving:");
   console.log(serving);
 
+  document.querySelector("#bartender-parent").innerHTML = "";
+
   // Displaying data for each bartender using template element
   bartenders.forEach((bartender) => {
     const clone = document.querySelector("#bartender-template").content.cloneNode(true);
@@ -24,7 +26,10 @@ export function displayBartenders(bartenders, serving) {
       clone.querySelector(".bartender-status p").className = "text-sm text-brand-darkred";
     }
 
-    clone.querySelector(".bartender-status p").textContent = bartender.statusDetail;
+    // Cleaning bartender's status details
+    let status = bartender.statusDetail.split(/(?=[A-Z])/).join(" ");
+    status = status.charAt(0).toUpperCase() + status.substring(1).toLowerCase();
+    clone.querySelector(".bartender-status p").textContent = status;
 
     const orderId = bartender.servingCustomer;
     clone.querySelector(".bartender-order-id").textContent = orderId;
@@ -33,9 +38,7 @@ export function displayBartenders(bartenders, serving) {
     serving.forEach((serve) => {
       if (serve.id === orderId) {
         let array = [];
-        console.log("array:", array);
         let counts = [];
-        console.log("counts:", counts);
         countBeers();
 
         // Counting how many beers of each type bartender has in the order
