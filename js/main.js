@@ -18,7 +18,7 @@ async function loop() {
 }
 
 async function fetchData() {
-  console.log("fetchData");
+  // console.log("fetchData");
   try {
     loadJSON();
   } catch (err) {

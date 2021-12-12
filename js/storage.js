@@ -1,14 +1,14 @@
 "use strict";
 
 export function displayStorage(storageData) {
-  console.log("storage data");
+  // console.log("storage data");
   storageData.sort(sortStorage);
   const storageParent = document.querySelector(".storage-parent");
   while (storageParent.firstChild) {
     storageParent.removeChild(storageParent.firstChild);
   }
   storageData.slice(0, 7).forEach(showColumn);
-  console.log(storageData);
+  //  console.log(storageData);
 }
 
 function sortStorage(a, b) {
@@ -23,7 +23,7 @@ function sortStorage(a, b) {
 }
 
 function showColumn(column, index) {
-  console.log(column, index);
+  // console.log(column, index);
   const template = document.querySelector("#storage-template").content;
   const copy = template.cloneNode(true);
 
