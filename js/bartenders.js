@@ -26,8 +26,9 @@ export function displayBartenders(bartenders, serving) {
     serving.forEach((serve) => {
       if (serve.id === orderId) {
         let array = [];
-        console.log("array", array);
+        console.log("array:", array);
         let counts = [];
+        console.log("counts:", counts);
         countBeers();
 
         // Counting how many beers of each type bartender has in the order
@@ -38,6 +39,22 @@ export function displayBartenders(bartenders, serving) {
             if (counts[beer] === 1) {
               array.push(beer);
             }
+          });
+          showBeers();
+        }
+
+        // Showing all beers from the array
+        function showBeers() {
+          array.forEach((elem) => {
+            const beer = document.createElement("p");
+            beer.className = "ml-3 text-sm m-1 hidden xl:block";
+            let text = document.createTextNode(elem);
+            // If there are more than one beer of the same type in the order, adding amount in front of the beer name
+            if (counts[elem] > 1) {
+              text = document.createTextNode(`${counts[elem]}x ${elem}`);
+            }
+            beer.appendChild(text);
+            clone.querySelector(".bartender-order").append(beer);
           });
         }
       }
