@@ -26,14 +26,18 @@ export function displayBartenders(bartenders, serving) {
     serving.forEach((serve) => {
       if (serve.id === orderId) {
         let array = [];
+        console.log("array", array);
         let counts = [];
-        console.log("counts", counts);
         countBeers();
 
         // Counting how many beers of each type bartender has in the order
         function countBeers() {
           serve.order.forEach((beer) => {
             counts[beer] = (counts[beer] || 0) + 1;
+            // Adding unique beers to the array
+            if (counts[beer] === 1) {
+              array.push(beer);
+            }
           });
         }
       }
