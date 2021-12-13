@@ -33,8 +33,63 @@ async function loadJSON() {
   renderUI(data);
 }
 
+// test data
+const queueData = [
+  {
+    id: 300,
+    order: ["Sleighride"],
+    startTime: 1638971062410,
+  },
+  // {
+  //   id: 301,
+  //   order: ["Sleighride", "Sleighride", "Sleighride"],
+  //   startTime: 1638971062410,
+  // },
+  // {
+  //   id: 302,
+  //   order: ["Sleighride"],
+  //   startTime: 1638971062410,
+  // },
+  // {
+  //   id: 303,
+  //   order: ["Sleighride", "Sleighride", "Sleighride"],
+  //   startTime: 1638971062410,
+  // },
+  // {
+  //   id: 304,
+  //   order: ["Sleighride"],
+  //   startTime: 1638971062410,
+  // },
+  // {
+  //   id: 305,
+  //   order: ["Sleighride", "Sleighride", "Sleighride"],
+  //   startTime: 1638971062410,
+  // },
+  // {
+  //   id: 306,
+  //   order: ["Sleighride"],
+  //   startTime: 1638971062410,
+  // },
+  // {
+  //   id: 307,
+  //   order: ["Sleighride", "Sleighride", "Sleighride"],
+  //   startTime: 1638971062410,
+  // },
+  // {
+  //   id: 308,
+  //   order: ["Sleighride"],
+  //   startTime: 1638971062410,
+  // },
+  // {
+  //   id: 309,
+  //   order: ["Sleighride", "Sleighride", "Sleighride"],
+  //   startTime: 1638971062410,
+  // },
+];
+
 function renderUI(data) {
-  displayQueue(data.queue);
+  // displayQueue(data.queue);
+  displayQueue(queueData);
   displayTaps(data.taps);
   displayBartenders(data.bartenders, data.serving);
   displayStorage(data.storage);

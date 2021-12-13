@@ -28,15 +28,16 @@
         w-full
       "
     >
-      <div
+      <section
+        id="queue"
         class="grid grid-rows-[auto,1fr] col-span-1 row-span-3 order-1 w-full"
       >
         <!--Queue starts here-->
         <h1 class="text-black text-xl font-medium mb-2 leading-none">Queue</h1>
         <div class="flex space-x-6 items-center">
-          <div class="flex h-full w-full xl:w-[75%] space-x-3">
+          <div class="flex h-full w-full xl:w-[75%] space-x-3 orders">
             <!--Queue "box" starts here-->
-            <div
+            <!-- <article
               class="
                 bg-white
                 flex-1
@@ -53,15 +54,15 @@
               "
             >
               <h3 class="text-black text-center text-lg">272</h3>
-              <div class="flex space-x-3 items-center justify-center">
+              <div class="flex space-x-3 items-center justify-center beers">
                 <img src="images/beer-icon.svg" class="h-20 md:h-24 w-auto" />
                 <p class="text-3xl sm:text-4xl">x5</p>
-              </div>
-              <!--I added a div below in order to make it easier to center the icon-->
-              <div></div>
-            </div>
+              </div> -->
+            <!--I added a div below in order to make it easier to center the icon-->
+            <!-- <div></div>
+            </article> -->
             <!--Queue "box" starts here-->
-            <div
+            <!-- <div
               class="
                 bg-white
                 flex-1
@@ -83,9 +84,9 @@
                 <p class="text-3xl sm:text-4xl">x10</p>
               </div>
               <div></div>
-            </div>
+            </div> -->
             <!--Queue "box" starts here-->
-            <div
+            <!-- <div
               class="
                 bg-white
                 flex-1
@@ -107,11 +108,11 @@
                 <p class="text-3xl sm:text-4xl">x1</p>
               </div>
               <div></div>
-            </div>
+            </div> -->
           </div>
-          <p class="hidden xl:block text-5xl text-gray-500">+10</p>
+          <p class="hidden md:block text-5xl text-gray-500 plus_num"></p>
         </div>
-      </div>
+      </section>
 
       <!--Tap levels starts here-->
       <div class="grid grid-rows-[auto,1fr] col-span-1 row-span-7 order-3">
