@@ -115,7 +115,10 @@
       </section>
 
       <!--Tap levels starts here-->
-      <div class="grid grid-rows-[auto,1fr] col-span-1 row-span-7 order-3">
+      <section
+        class="grid grid-rows-[auto,1fr] col-span-1 row-span-7 order-3"
+        id="taps"
+      >
         <h1 class="text-black text-xl font-medium mb-2 leading-none">
           Tap levels
         </h1>
@@ -143,9 +146,10 @@
                 pr-4
                 md:pl-0 md:pr-0
               "
+              id="tap_row_one"
             >
               <!--Individual tap level/circle-->
-              <div class="pr-4 md:pr-0">
+              <!-- <article class="pr-4 md:pr-0" data-beer="Hoppily Ever After">
                 <div class="">
                   <div
                     class="
@@ -174,7 +178,7 @@
                         cy="64"
                       />
                       <circle
-                        class="text-brand-green"
+                        class="text-brand-green line_level"
                         stroke-width="12"
                         stroke-dasharray="377"
                         stroke-dashoffset="151"
@@ -189,16 +193,16 @@
                   </div>
                 </div>
                 <div class="flex flex-col items-center">
-                  <p class="text-sm md:text-base">Hoppily Ever After</p>
+                  <p class="text-sm md:text-base name">Hoppily Ever After</p>
                   <div class="flex items-center gap-2">
-                    <p class="text-sm md:text-base">#1</p>
+                    <p class="text-sm md:text-base number">#1</p>
                     <p class="text-sm md:text-2xl">·</p>
-                    <p class="text-sm md:text-base">2000</p>
+                    <p class="text-sm md:text-base level">2000</p>
                   </div>
                 </div>
-              </div>
+              </article> -->
               <!--Individual tap level/circle-->
-              <div class="pr-4 md:pr-0">
+              <!-- <article class="pr-4 md:pr-0" data-beer="Sleighride">
                 <div class="">
                   <div
                     class="
@@ -213,7 +217,7 @@
                     "
                   >
                     <img
-                      src="images/hoppily.png"
+                      src="images/round-sleighride.png"
                       class="w-16 h-16 transform rotate-90"
                     />
                     <svg class="absolute top-0 left-0">
@@ -227,7 +231,7 @@
                         cy="64"
                       />
                       <circle
-                        class="text-brand-green"
+                        class="text-brand-green line_level"
                         stroke-width="12"
                         stroke-dasharray="377"
                         stroke-dashoffset="151"
@@ -242,16 +246,16 @@
                   </div>
                 </div>
                 <div class="flex flex-col items-center text-sm md:text-base">
-                  <p class="text-sm md:text-base">Hoppily Ever After</p>
+                  <p class="text-sm md:text-base name">Sleighride</p>
                   <div class="flex items-center gap-2">
-                    <p class="text-sm md:text-base">#1</p>
+                    <p class="text-sm md:text-base number">#2</p>
                     <p class="text-sm md:text-2xl">·</p>
-                    <p class="text-sm md:text-base">2000</p>
+                    <p class="text-sm md:text-base level">2000</p>
                   </div>
                 </div>
-              </div>
+              </article> -->
               <!--Individual tap level/circle-->
-              <div class="pr-4 md:pr-0">
+              <!-- <article class="pr-4 md:pr-0" data-beer="Hollaback Lager">
                 <div class="">
                   <div
                     class="
@@ -266,7 +270,7 @@
                     "
                   >
                     <img
-                      src="images/hoppily.png"
+                      src="images/round-hollaback.png"
                       class="w-16 h-16 transform rotate-90"
                     />
                     <svg class="absolute top-0 left-0">
@@ -280,7 +284,7 @@
                         cy="64"
                       />
                       <circle
-                        class="text-brand-green"
+                        class="text-brand-green line_level"
                         stroke-width="12"
                         stroke-dasharray="377"
                         stroke-dashoffset="151"
@@ -295,16 +299,16 @@
                   </div>
                 </div>
                 <div class="flex flex-col items-center">
-                  <p class="text-sm md:text-base">Hoppily Ever After</p>
+                  <p class="text-sm md:text-base name">Hollaback Lager</p>
                   <div class="flex items-center gap-2">
-                    <p class="text-sm md:text-base">#1</p>
+                    <p class="text-sm md:text-base number">#3</p>
                     <p class="text-sm md:text-2xl">·</p>
-                    <p class="text-sm md:text-base">2000</p>
+                    <p class="text-sm md:text-base level">2000</p>
                   </div>
                 </div>
-              </div>
+              </article> -->
               <!--Individual tap level/circle-->
-              <div class="pr-4 md:pr-0">
+              <!-- <article class="pr-4 md:pr-0" data-beer="GitHop">
                 <div class="">
                   <div
                     class="
@@ -319,7 +323,7 @@
                     "
                   >
                     <img
-                      src="images/hoppily.png"
+                      src="images/round-githop.png"
                       class="w-16 h-16 transform rotate-90"
                     />
                     <svg class="absolute top-0 left-0">
@@ -333,7 +337,7 @@
                         cy="64"
                       />
                       <circle
-                        class="text-brand-green"
+                        class="text-brand-green line_level"
                         stroke-width="12"
                         stroke-dasharray="377"
                         stroke-dashoffset="151"
@@ -348,19 +352,22 @@
                   </div>
                 </div>
                 <div class="flex flex-col items-center">
-                  <p class="text-sm md:text-base">Hoppily Ever After</p>
+                  <p class="text-sm md:text-base name">GitHop</p>
                   <div class="flex items-center gap-2">
-                    <p class="text-sm md:text-base">#1</p>
+                    <p class="text-sm md:text-base number">#4</p>
                     <p class="text-sm md:text-2xl">·</p>
-                    <p class="text-sm md:text-base">2000</p>
+                    <p class="text-sm md:text-base level">2000</p>
                   </div>
                 </div>
-              </div>
+              </article> -->
             </div>
             <!--Flex for second row of taps here-->
-            <div class="flex flex-col md:flex-row md:justify-evenly">
+            <div
+              class="flex flex-col md:flex-row md:justify-evenly"
+              id="tap_row_two"
+            >
               <!--Individual tap level/circle-->
-              <div class="pr-4 md:pr-0">
+              <!-- <article class="pr-4 md:pr-0" data-beer="Steampunk">
                 <div class="">
                   <div
                     class="
@@ -375,7 +382,7 @@
                     "
                   >
                     <img
-                      src="images/hoppily.png"
+                      src="images/round-steampunk.png"
                       class="w-16 h-16 transform rotate-90"
                     />
                     <svg class="absolute top-0 left-0">
@@ -389,7 +396,7 @@
                         cy="64"
                       />
                       <circle
-                        class="text-brand-green"
+                        class="text-brand-green line_level"
                         stroke-width="12"
                         stroke-dasharray="377"
                         stroke-dashoffset="151"
@@ -404,16 +411,16 @@
                   </div>
                 </div>
                 <div class="flex flex-col items-center">
-                  <p class="text-sm md:text-base">Hoppily Ever After</p>
+                  <p class="text-sm md:text-base name">Steampunk</p>
                   <div class="flex items-center gap-2">
-                    <p class="text-sm md:text-base">#1</p>
+                    <p class="text-sm md:text-base number">#5</p>
                     <p class="text-sm md:text-2xl">·</p>
-                    <p class="text-sm md:text-base">2000</p>
+                    <p class="text-sm md:text-base level">2000</p>
                   </div>
                 </div>
-              </div>
+              </article> -->
               <!--Individual tap level/circle-->
-              <div class="pr-4 md:pr-0">
+              <!-- <article class="pr-4 md:pr-0" data-beer="Row 26">
                 <div class="">
                   <div
                     class="
@@ -428,7 +435,7 @@
                     "
                   >
                     <img
-                      src="images/hoppily.png"
+                      src="images/round-row26.png"
                       class="w-16 h-16 transform rotate-90"
                     />
                     <svg class="absolute top-0 left-0">
@@ -442,7 +449,7 @@
                         cy="64"
                       />
                       <circle
-                        class="text-brand-green"
+                        class="text-brand-green line_level"
                         stroke-width="12"
                         stroke-dasharray="377"
                         stroke-dashoffset="151"
@@ -457,16 +464,16 @@
                   </div>
                 </div>
                 <div class="flex flex-col items-center">
-                  <p class="text-sm md:text-base">Hoppily Ever After</p>
+                  <p class="text-sm md:text-base name">Row 26</p>
                   <div class="flex items-center gap-2">
-                    <p class="text-sm md:text-base">#1</p>
+                    <p class="text-sm md:text-base number">#6</p>
                     <p class="text-sm md:text-2xl">·</p>
-                    <p class="text-sm md:text-base">2000</p>
+                    <p class="text-sm md:text-base level">2000</p>
                   </div>
                 </div>
-              </div>
+              </article> -->
               <!--Individual tap level/circle-->
-              <div class="pr-4 md:pr-0">
+              <!-- <article class="pr-4 md:pr-0" data-beer="Mowintime">
                 <div class="">
                   <div
                     class="
@@ -481,7 +488,7 @@
                     "
                   >
                     <img
-                      src="images/hoppily.png"
+                      src="images/round-mowintime.png"
                       class="w-16 h-16 transform rotate-90"
                     />
                     <svg class="absolute top-0 left-0">
@@ -495,7 +502,7 @@
                         cy="64"
                       />
                       <circle
-                        class="text-brand-green"
+                        class="text-brand-green line_level"
                         stroke-width="12"
                         stroke-dasharray="377"
                         stroke-dashoffset="151"
@@ -510,18 +517,18 @@
                   </div>
                 </div>
                 <div class="flex flex-col items-center">
-                  <p class="text-sm md:text-base">Hoppily Ever After</p>
+                  <p class="text-sm md:text-base name">Mowintime</p>
                   <div class="flex items-center gap-2">
-                    <p class="text-sm md:text-base">#1</p>
+                    <p class="text-sm md:text-base number">#7</p>
                     <p class="text-sm md:text-2xl">·</p>
-                    <p class="text-sm md:text-base">2000</p>
+                    <p class="text-sm md:text-base level">2000</p>
                   </div>
                 </div>
-              </div>
+              </article> -->
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       <!--In progress section starts here-->
       <div class="grid grid-rows-[auto,1fr] col-span-1 row-span-6 order-2">
