@@ -1,7 +1,0 @@
-stroke-dasharray = circumference (r * 2 * PI)
-
-        stroke-dashoffset = circumference - percentage * circumference
-
-        below is 60%. calculation:
-        circumeference: r (60) * 2 * pi for dasharray == 377
-        dashoffset: 377 - 0.6 * 377 = 151
