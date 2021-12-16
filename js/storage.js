@@ -16,7 +16,7 @@ function sortStorage(a, b) {
     return -1;
   }
 
-  if (b.amount > a.amount) {
+  if (b.amount < a.amount) {
     return 1;
   }
   return 0;
