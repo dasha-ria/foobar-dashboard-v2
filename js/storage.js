@@ -1,12 +1,18 @@
 "use strict";
 
+function removeAllChildren(parent) {
+  while (parent.firstChild) {
+    parent.removeChild(parent.firstChild);
+  }
+}
+
 export function displayStorage(storageData) {
   console.log("storage data");
   storageData.sort(sortStorage);
   const storageParent = document.querySelector(".storage-parent");
-  while (storageParent.firstChild) {
-    storageParent.removeChild(storageParent.firstChild);
-  }
+
+  removeAllChildren(storageParent);
+
   storageData.slice(0, 7).forEach(showColumn);
   console.log(storageData);
 }

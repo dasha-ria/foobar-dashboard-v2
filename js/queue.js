@@ -5,9 +5,8 @@ import Swiper from "swiper";
 import "swiper/css";
 
 const swiper = new Swiper(".mySwiper", {
-  slidesPerView: 3,
+  slidesPerView: "auto",
   pagination: {
-    el: ".swiper-pagination",
     clickable: true,
   },
 });

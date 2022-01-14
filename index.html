@@ -7,26 +7,11 @@
     <link rel="icon" type="image/svg" href="images/foobar-beerlogo.svg" />
   </head>
   <body
-    class="
-      bg-brand-background
-      p-3
-      min-h-screen
-      xl:h-screen
-      w-screen
-      overflow-x-hidden
-    "
+    class="bg-brand-background p-3 min-h-screen xl:h-screen w-screen overflow-x-hidden"
   >
     <!--Grid stuff below-->
     <div
-      class="
-        grid grid-cols-1
-        auto-rows-auto
-        xl:grid-cols-2 xl:grid-rows-[repeat(10,minmax(0,1fr))]
-        grid-flow-row
-        gap-6
-        h-full
-        w-full
-      "
+      class="grid grid-cols-1 auto-rows-auto xl:grid-cols-2 xl:grid-rows-[repeat(10,minmax(0,1fr))] grid-flow-row gap-6 h-full w-full"
     >
       <section
         id="queue"
@@ -36,15 +21,7 @@
         <h1 class="text-black text-xl font-medium mb-2 leading-none">Queue</h1>
         <div class="flex space-x-6 items-center swiper mySwiper">
           <div
-            class="
-              flex
-              h-full
-              w-full
-              xl:w-[75%]
-              space-x-3
-              orders
-              swiper-wrapper
-            "
+            class="flex h-full w-full xl:w-[75%] space-x-3 orders swiper-wrapper"
           ></div>
           <p class="hidden md:block text-5xl text-gray-500 plus_num"></p>
         </div>
@@ -59,29 +36,12 @@
           Tap levels
         </h1>
         <div
-          class="
-            bg-white
-            w-[100%]
-            h-full
-            shadow
-            rounded-xl
-            flex flex-col
-            pt-4
-            pb-4
-            xl:pt-0 xl:pb-0
-          "
+          class="bg-white w-[100%] h-full shadow rounded-xl flex flex-col pt-4 pb-4 xl:pt-0 xl:pb-0"
         >
           <div class="h-full flex justify-around md:flex-col md:justify-evenly">
             <!--Flex for first row-->
             <div
-              class="
-                flex flex-col
-                md:flex-row
-                justify-around
-                pl-4
-                pr-4
-                md:pl-0 md:pr-0
-              "
+              class="flex flex-col md:flex-row justify-around pl-4 pr-4 md:pl-0 md:pr-0"
               id="tap_row_one"
             >
               <!--Individual tap level/circle-->
@@ -105,18 +65,7 @@
 
         <template id="bartender-template">
           <div
-            class="
-              bartender
-              bg-white
-              flex-1
-              h-[180px]
-              xl:flex-1 xl:h-full
-              min-w-[120px]
-              max-w-[200px]
-              md:max-w-none
-              shadow
-              rounded-xl
-            "
+            class="bartender bg-white flex-1 h-[180px] xl:flex-1 xl:h-full min-w-[140px] md:max-w-none shadow rounded-xl"
           >
             <img src="#" alt="#" class="h-16 w-auto mx-auto mt-4 mb-1" />
             <p class="text-lg text-center">#</p>
@@ -125,13 +74,7 @@
               <p class="text-sm text-brand-darkred">#</p>
             </div>
             <p
-              class="
-                bartender-order-id
-                text-black text-lg text-center
-                mt-3
-                hidden
-                xl:block
-              "
+              class="bartender-order-id text-black text-lg text-center mt-3 hidden xl:block"
             >
               #
             </p>
@@ -146,27 +89,10 @@
           Storage
         </h1>
         <div
-          class="
-            bg-white
-            shadow
-            rounded-xl
-            h-full
-            w-full
-            flex
-            items-center
-            pt-6
-            pb-6
-            lg:min-w-[600px]
-          "
+          class="bg-white shadow rounded-xl h-full w-full flex items-center pt-6 pb-6 lg:min-w-[600px]"
         >
           <div
-            class="
-              flex flex-row
-              items-baseline
-              justify-around
-              w-full
-              storage-parent
-            "
+            class="flex flex-row items-baseline justify-around w-full storage-parent"
           ></div>
           <!--Column-->
           <template id="storage-template">
