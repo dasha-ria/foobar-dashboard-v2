@@ -2,6 +2,9 @@
 
 let hasRun = false;
 
+const RED = "#FF8860";
+const GREEN = "#87C13C";
+
 export function displayTaps(tapsData) {
   //console.log(tapsData);
   // if the loop is running the first time, populate the taps section
@@ -22,16 +25,9 @@ function changeTapLevel(tap) {
   const state = calculateStrokeStates(stroke, tap.level);
 
   // if tap level is below 700, give the stroke red color and call animate function
-  if (tap.level < 700) {
-    const strokeColor = "#FF8860";
-    animateStroke(stroke, state.initial, state.final, strokeColor);
-    stroke.style.color = strokeColor;
-  } else {
-    // if the tap level is above 700, give the stroke green color and call animate function
-    const strokeColor = "#87C13C";
-    animateStroke(stroke, state.initial, state.final, strokeColor);
-    stroke.style.color = strokeColor;
-  }
+  const strokeColor = tap.level < 700 ? RED : GREEN;
+  animateStroke(stroke, state.initial, state.final, strokeColor);
+  stroke.style.color = strokeColor;
 
   // change textContent in the tap level paragraph
   stroke.setAttribute("stroke-dashoffset", state.final);

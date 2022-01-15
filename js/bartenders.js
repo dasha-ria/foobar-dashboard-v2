@@ -10,25 +10,33 @@ export function displayBartenders(bartenders, serving) {
 
   // Displaying data for each bartender using template element
   bartenders.forEach((bartender) => {
-    const clone = document.querySelector("#bartender-template").content.cloneNode(true);
+    const clone = document
+      .querySelector("#bartender-template")
+      .content.cloneNode(true);
 
-    clone.querySelector(".bartender>img").src = `images/${bartender.name}.png`;
-    clone.querySelector(".bartender>img").alt = `Picture of ${bartender.name}`;
+    const bartenderImg = clone.querySelector(".bartender>img");
+    bartenderImg.src = `images/${bartender.name}.png`;
+    bartenderImg.alt = `Picture of ${bartender.name}`;
 
-    clone.querySelector(".bartender p:nth-of-type(1)").textContent = bartender.name;
+    clone.querySelector(".bartender p:nth-of-type(1)").textContent =
+      bartender.name;
 
-    clone.querySelector(".bartender-status img").src = `images/${bartender.statusDetail}.svg`;
+    clone.querySelector(
+      ".bartender-status img"
+    ).src = `images/${bartender.statusDetail}.svg`;
 
     // Setting color for bartender's status
     if (bartender.statusDetail === "waiting") {
-      clone.querySelector(".bartender-status p").className = "text-sm text-brand-darkgreen";
+      clone.querySelector(".bartender-status p").className =
+        "text-sm text-brand-darkgreen";
     } else {
-      clone.querySelector(".bartender-status p").className = "text-sm text-brand-darkred";
+      clone.querySelector(".bartender-status p").className =
+        "text-sm text-brand-darkred";
     }
 
     // Cleaning bartender's status details
     let status = bartender.statusDetail.split(/(?=[A-Z])/).join(" ");
-    status = status.charAt(0).toUpperCase() + status.substring(1).toLowerCase();
+    status = capitalise(status);
     clone.querySelector(".bartender-status p").textContent = status;
 
     const orderId = bartender.servingCustomer;
@@ -72,4 +80,8 @@ export function displayBartenders(bartenders, serving) {
 
     document.querySelector("#bartender-parent").appendChild(clone);
   });
+}
+
+function capitalise(string) {
+  return string.charAt(0).toUpperCase() + string.substring(1).toLowerCase();
 }
