@@ -63,10 +63,16 @@ function hideNumberOfHiddenOrders() {
 
 function displayNoQueueMessage(container) {
   const noQueueBox = document.createElement("div");
-  noQueueBox.className = "bg-white  w-full h-full shadow rounded-xl flex";
+  noQueueBox.className =
+    "bg-white w-full h-full shadow rounded-xl flex justify-center items-center flex-col gap-1 md:gap-4 p-4 xl:p-0";
+  const noQueuePic = document.createElement("img");
+  noQueuePic.src = `images/no-orders-pic.svg`;
+  noQueuePic.className = "w-12 md:w-16";
   const noQueueElement = document.createElement("p");
   noQueueElement.textContent = "No orders in the queue";
-  noQueueElement.className = "flex flex-col justify-center mt-2 xl:mt-0";
+  noQueueElement.className =
+    "flex flex-col justify-center mt-2 xl:mt-0 text-base md:text-lg text-gray-600";
+  noQueueBox.append(noQueuePic);
   noQueueBox.append(noQueueElement);
   container.append(noQueueBox);
 }
