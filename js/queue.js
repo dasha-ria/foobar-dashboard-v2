@@ -62,8 +62,11 @@ function hideNumberOfHiddenOrders() {
 }
 
 function displayNoQueueMessage(container) {
+  const noQueueBox = document.createElement("div");
+  noQueueBox.className = "bg-white  w-full h-full shadow rounded-xl flex";
   const noQueueElement = document.createElement("p");
   noQueueElement.textContent = "No orders in the queue";
   noQueueElement.className = "flex flex-col justify-center mt-2 xl:mt-0";
-  container.append(noQueueElement);
+  noQueueBox.append(noQueueElement);
+  container.append(noQueueBox);
 }
