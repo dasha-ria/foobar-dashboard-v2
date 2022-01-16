@@ -6,6 +6,7 @@ import "swiper/css";
 
 const swiper = new Swiper(".mySwiper", {
   slidesPerView: "auto",
+  grabCursor: true,
   pagination: {
     clickable: true,
   },
@@ -22,7 +23,7 @@ export function displayQueue(queueData) {
 
   if (sorted.length > 0) {
     // if there are orders in the queue
-    let mql = window.matchMedia("(max-width: 768px)");
+    let mql = window.matchMedia("(max-width: 1280px)");
     if (mql.matches) {
       // if the viewport is 768 pixels wide or less, display all orders
       displayOrders(sorted, ordersWrapper);

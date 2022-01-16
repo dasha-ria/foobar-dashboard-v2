@@ -8,6 +8,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+.grab-cursor {
+  cursor: grab;
+}
+
 .swiper {
   width: 100%;
   height: 100%;
